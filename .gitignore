@@ -53,3 +53,7 @@ dkms.conf
 
 # Compiled
 feistel_glochon
+
+# Test Files
+*.txt
+*.cif
