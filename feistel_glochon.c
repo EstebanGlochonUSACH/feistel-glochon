@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
-#include <string.h>
 
 #define round_t uint8_t
 
@@ -28,6 +27,8 @@ void feistel_encrypt(uint8_t *block, uint8_t *output, uint8_t key, round_t round
 void feistel_decrypt(uint8_t *block, uint8_t *output, uint8_t key, round_t rounds);
 
 // void print_bytes(uint8_t *buffer, size_t length);
+
+void *memset(void *s, int c, size_t len);
 
 int main(int argc, char *argv[]) {
 	if (argc != 5) {
@@ -281,3 +282,9 @@ void copy_buffer(uint8_t *buffer, uint8_t *bytes, uint8_t size) {
 // 		}
 // 	}
 // }
+
+void *memset(void *s, int c, size_t len) {
+	uint8_t* p = s;
+	while(len--) *p++ = (uint8_t)c;
+	return s;
+}
